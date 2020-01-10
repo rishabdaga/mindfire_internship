@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+    <title>Registration</title>
+    <style>
+        li{
+            float: left;
+            padding-left: 10px;
+        }
+        #d1{
+            border-style: solid;
+            border-color: black;
+            margin: 10px auto;
+            width: 60%;
+        }
+        th, td{
+            text-align: left;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="b5.jpg" width="100%" >
+    </header>
+    <nav style="padding: 10px; background-color: lightcyan; height: 50px;">
+       <img src="logo.png" width="50px" height="50px" border=2>  
+    </nav>
+    <div id="d1">
+        <form method="" action="">
+            <h1 style="text-align: center;">Resgister Here</h1>
+            <table style="width: 80%; margin: auto;">
+                <tr>
+                    <th>First Name</th>
+                    <td><input type="text" maxlength="10" title="first name" placeholder="first name" required</td>
+                </tr>
+                <tr>
+                    <th>Middle Name</th>
+                    <td><input type="text" maxlength="10" title="middle name" placeholder="middle name" required</td>
+                </tr>
+                <tr>
+                    <th>Last Name</th>
+                    <td><input type="text" maxlength="10" title="last name" placeholder="last name" required</td>
+                </tr>
+                <tr>
+                    <th>Email Id</th>
+                    <td><input type="email" maxlength="30" title="mail id" placeholder="mail id" required</td>
+                </tr>
+                <tr>
+                    <th>Password</th>
+                    <td><input type="password" maxlength="15" title="password" placeholder="password" required</td>
+                </tr>
+                <tr>
+                    <th>Date of Birth</th>
+                    <td><input type="date" title="DOB" placeholder="DOB" required</td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>
+                        <select> 
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Current Address</th>
+                    <td><input type="text"  title="current address" placeholder="current address" required</td> 
+                </tr>
+                <tr>
+                    <th>Permanent Address</th>
+                    <td><input type="text"  title="permanent address" placeholder="permanent address" required</td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td><input type="text"  title="city" placeholder="city" required</td>
+                </tr>
+                <tr>
+                    <th>State</th>
+                    <td><input type="text"  title="state" placeholder="state" required</td>
+                </tr>
+                <tr>
+                    <th>Enter Country</th>
+                    <td><input type="text"  title="country" placeholder="country" required</td>
+                </tr>
+                <tr>
+                    <th>Zip Code</th>
+                    <td><input type="number" maxlength="6"  title="Zip Code" placeholder="Zip Code" required</td>
+                </tr>
+                <tr>
+                    <th>Personal Interest</th>
+                    <td><input type="text" title="interest" placeholder="interest" required</td>
+                </tr>
+            </table>
+            <button type="submit" value="Submit" style="padding: 10px; margin-left: 50%; margin-bottom: 10px;">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
