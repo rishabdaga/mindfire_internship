@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registration Form</title>
+</head>
+
+<body style="margin: 0; background-image: url(bck.jpg); background-repeat: no-repeat; background-size: cover;">
+  <div
+    style="max-width: 65%; padding: 10px 40px 20px 40px; margin: 100px auto; background-color: #fff; border-radius: 5px;box-shadow: 5px 8px 15px 3px rgba(0, 0, 0, 0.2);">
+    <h1 style="display: block; text-align: center; font-weight: bold; color: #555; text-shadow: 1px 1px 0 #fff;">
+      Registration Form
+    </h1>
+    <hr>
+    <br>
+    <form>
+      <div style="background-color: cadetblue;padding: 5px; width: 100%;">
+        <h4>Full Name</h4>
+        <span>
+          <label for="fname" style=" padding: 12px 12px 12px 0; display: inline-block;">First Name<span style="color: red;">*</span></label>
+          <input type="text" name="fname" id="fname" placeholder="First Name" required style=" padding: 5px;border: 1px solid #ccc; border-radius: 4px; resize: vertical;"/>
+        </span>
+        <span>
+          <label for="mname" style=" padding: 12px 12px 12px 0; display: inline-block;">Middle Name</label>
+          <input type="text" name="mname" id="mname" placeholder="Middle Name" style=" padding: 5px;border: 1px solid #ccc; border-radius: 4px; resize: vertical;"/>
+        </span>
+        <span>
+          <label for="lname" style=" padding: 12px 12px 12px 0; display: inline-block;">Last Name<span style="color: red;">*</span></label>
+          <input type="text" name="lname" id="lname" placeholder="Last Name" required style=" padding: 5px;border: 1px solid #ccc; border-radius: 4px; resize: vertical;"/>
+        </span>
+      </div>
+      <br>
+      <div style="background-color: cadetblue;padding: 5px; width: 100%;">
+        <h4>Basic Details</h4>
+        <span>
+          <label for="gender" style=" padding: 12px 12px 12px 0; display: inline-block;">Gender<span style="color: red;">*</span></label><br>
+          <input type="radio" name="gender" id="gender" value="male" required>
+          <label style=" padding: 12px 12px 12px 0;  display: inline-block;">Male</label>
+          <input type="radio" name="gender" id="gender" value="female" required>
+          <label style=" padding: 12px 12px 12px 0;  display: inline-block;">Female</label>
+          <input type="radio" name="gender" id="gender" value="other" required>
+          <label style=" padding: 12px 12px 12px 0;  display: inline-block;">Other</label>
+        </span>
+      </div>
+      <br>
+      <div style="background-color: cadetblue;padding: 5px; width: 100%;">
+        <h4>Contact</h4>
+        <span>
+          <label for="Email" style=" padding: 12px 12px 12px 0; display: inline-block;">Email<span style="color: red;">*</span></label>
+          <input type="email" name="email" id="email" placeholder="abc@example.com" required style=" padding: 5px; width: 50%; border: 1px solid #ccc; border-radius: 4px; resize: vertical; margin-left: 70.22px;"/>
+        </span>
+        <br>
+        <span>
+          <label for="Phone Number 1" style=" padding: 12px 12px 12px 0; display: inline-block;">Phone Number 1<span style="color: red;">*</span></label>
+          <input type="number" name="phone1" id="phone1" placeholder="Phone Number" required style=" padding: 5px;border: 1px solid #ccc; border-radius: 4px; resize: vertical;"/>
+        </span>
+        <span>
+          <label for="Phone Number 2" style=" padding: 12px 12px 12px 0; display: inline-block;">Phone Number 2<span style="color: red;">*</span></label>
+          <input type="number" name="phone2" id="phone2" placeholder="Alternate Number" required style=" padding: 5px;border: 1px solid #ccc; border-radius: 4px; resize: vertical;"/>
+        </span>
+      </div>
+      <br>
+      <div style="background-color: cadetblue;padding: 5px; width: 100%;">
+        <h4>Privacy</h4>
+        <span>
+          <label for="password" style=" padding: 12px 12px 12px 0; display: inline-block;">Password<span style="color: red;">*</span></label>
+          <input class="pass" type="password" name="phone1" id="phone1" placeholder="Password" required style=" padding: 5px;margin-left: 53.74px; border: 1px solid #ccc; border-radius: 4px; resize: vertical;"/>
+        </span>
+        <span>
+          <label for="cnfmpass" style=" padding: 12px 12px 12px 0; display: inline-block;">Confirm Password<span style="color: red;">*</span></label>
+          <input type="password" name="cnfmpass" id="cnfmpass" placeholder="Confirm Password" required style=" padding: 5px;border: 1px solid #ccc; border-radius: 4px; resize: vertical;"/>
+        </span>
+      </div>
+      <br>
+      <div style="background-color: cadetblue;padding: 5px; width: 100%;">
+        <h4>Address</h4>
+        <label for="address1" style=" padding: 12px 12px 12px 0;  display: inline-block;">Address<span style="color: red;">*</span></label>
+        <input id="address1" required placeholder="Address" type="text" style="border: 1px solid #ccc;padding: 5px; border-radius: 4px; width: 50%; margin-left: 62.64px;"/>
+        <br>
+        <label for="address2" style=" padding: 12px 12px 12px 0;  display: inline-block;">Alternate Address<span style="color: red;">*</span></label>
+        <input id="address2" required placeholder="Alternate Address" type="text" style="border: 1px solid #ccc;padding: 5px; border-radius: 4px; width: 50%;"/>
+        <br>
+        <label for="city" style=" padding: 12px 12px 12px 0; display: inline-block;">City<span style="color: red;">*</span></label>
+        <input type="text" name="city" id="city" required style="border: 1px solid #ccc; padding: 5px; margin-left: 87.52px; border-radius: 4px;resize: vertical;">
+        <label for="state" style=" padding: 12px 12px 12px 0; display: inline-block;">Select State<span style="color: red;">*</span></label>
+        <select name="state" id="state" required style="border: 1px solid #ccc; padding: 5px; border-radius: 4px; resize: vertical;">
+          <option value="">---Select State---</option>
+          <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+          <option value="Assam">Assam</option>
+          <option value="Bihar">Bihar</option>
+          <option value="Chandigarh">Chandigarh</option>
+          <option value="Chhattisgarh">Chhattisgarh</option>
+          <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+          <option value="Daman and Diu">Daman and Diu</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Goa">Goa</option>
+          <option value="Gujarat">Gujarat</option>
+          <option value="Haryana">Haryana</option>
+          <option value="Himachal Pradesh">Himachal Pradesh</option>
+          <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+          <option value="Jharkhand">Jharkhand</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Kerala">Kerala</option>
+          <option value="Lakshadweep">Lakshadweep</option>
+          <option value="Madhya Pradesh">Madhya Pradesh</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Manipur">Manipur</option>
+          <option value="Meghalaya">Meghalaya</option>
+          <option value="Mizoram">Mizoram</option>
+          <option value="Nagaland">Nagaland</option>
+          <option value="Orissa">Orissa</option>
+          <option value="Pondicherry">Pondicherry</option>
+          <option value="Punjab">Punjab</option>
+          <option value="Rajasthan">Rajasthan</option>
+          <option value="Sikkim">Sikkim</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
+          <option value="Tripura">Tripura</option>
+          <option value="Uttaranchal">Uttaranchal</option>
+          <option value="Uttar Pradesh">Uttar Pradesh</option>
+          <option value="West Bengal">West Bengal</option>
+        </select>
+        <label for="country" style=" padding: 12px 12px 12px 0; display: inline-block;">Select Country<span style="color: red;">*</span></label>
+        <select name="country" id="country" required style="padding: 5px; border: 1px solid #ccc;border-radius: 4px; resize: vertical; padding: 5px; width: 80px;">
+          <option value="India">India</option>
+          <option value="Nepal">Nepal</option>
+          <option value="Other">Other</option>
+        </select>
+        <br>
+        <label for="subs" style=" padding: 12px 12px 12px 0; display: inline-block;">Subscribe to Newsletter</label>
+        <input type="radio" name="subscription" id="subs" value="yes" required>
+        <label style=" padding: 12px 12px 12px 0;  display: inline-block;">Yes</label>
+        <input type="radio" name="subscription" id="subs" value="No" required>
+        <label style=" padding: 12px 12px 12px 0;  display: inline-block;">No</label>
+      </div>
+      <br>
+      <button style=" background-color: rgb(14, 150, 43); color: white; padding: 5px 20px 5px 20px;margin-left: 42%; border-radius: 5px; cursor: pointer; font-size: 15px;">Register</button>
+    </form>
+  </div>
+</body>
+
+</html>

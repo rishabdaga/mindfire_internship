@@ -1,0 +1,71 @@
+body{
+    margin: 0; 
+    background-image: url(bck.jpg); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.container{
+    max-width: 65%; 
+    padding: 10px 40px 20px 40px; 
+    margin: 100px auto; 
+    background-color: #fff; 
+    border-radius: 5px;
+    box-shadow: 5px 8px 15px 3px rgba(0, 0, 0, 0.2);
+}
+h1{
+    display: block; 
+    text-align: center; 
+    font-weight: bold; 
+    color: #555; 
+    text-shadow: 1px 1px 0 #fff;
+}
+.row{
+    background-color: cadetblue;
+    padding: 5px; 
+    width: 100%;
+}
+label{
+    padding: 12px 12px 12px 0px; 
+    display: inline-block;
+}
+input{
+    padding: 5px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    resize: vertical;
+
+}
+.email{
+    margin-left: 70.22px;
+}
+#str{
+    color: red;
+}
+.add1{
+    margin-left: 62.64px;
+    width: 50%;
+}
+.add2{
+    width: 50%;
+}
+.city{
+    margin-left: 87.52px;
+}
+.pass{
+    margin-left: 53.74px;
+}
+select{
+    border: 1px solid #ccc; 
+    padding: 5px; 
+    border-radius: 4px; 
+    resize: vertical;
+}
+button{
+    background-color: rgb(14, 150, 43); 
+    color: white; 
+    padding: 5px 20px 5px 20px;
+    margin-left: 42%;
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 15px;
+}
