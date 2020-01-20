@@ -1,0 +1,90 @@
+body{
+    margin: 0; 
+}
+.container{
+    width: 75%; 
+    padding: 10px 40px 20px 40px; 
+    margin: 100px auto; 
+    background-color: #fff; 
+    border-radius: 5px;
+    box-shadow: 5px 8px 15px 3px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width:800px) {
+    /* For mobile phones and tablets */
+    .container{
+      width: 100%;
+      padding: 5px 20px 10px 20px;
+      margin: 10px auto;
+    }
+}
+h1{
+    display: block; 
+    text-align: center; 
+    font-weight: bold; 
+    color: #555; 
+    text-shadow: 1px 1px 0 #fff;
+}
+.row{
+    background-color: #daf0da;
+    padding: 5px; 
+    width: 100%;
+    margin-top: 20px;
+}
+.error{
+    color: red;
+    font-size: 16px;
+}
+label{
+    padding: 12px 12px 12px 0px; 
+    display: inline-block;
+}
+input{
+    padding: 5px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    resize: vertical;
+}
+
+#str{
+    color: red;
+}
+#lblPermanentAddress, #lblCurrentAddress, #lblEmail{
+    width: 50%;
+}
+select{
+    border: 1px solid #ccc; 
+    padding: 5px; 
+    border-radius: 4px; 
+    resize: vertical;
+}
+.captcha{
+    padding: 10px;
+}
+#questionCaptcha{
+    width: 168px;
+    text-align: center;
+    font-weight: bold;
+    background-image: url("captcha_bck.jpg");
+}
+#captchaRefresh{
+    padding: 5px 20px 5px 20px;
+    margin-left: 10px;
+    border-radius: 5px; 
+    background-color: rgb(243, 244, 250);
+    cursor: pointer; 
+    color: black;
+    font-size: 15px;
+    border: 1px solid #ccc;
+}
+#captchaRefresh:hover{
+    background-color: coral;
+}
+#submit{
+    padding: 7px 30px 7px 30px;
+    margin-left: 43.12%;
+    font-size: 15px;
+    cursor: pointer;
+}
+#submit:hover{
+    background-color: rgb(43, 156, 62);
+}
