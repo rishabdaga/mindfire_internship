@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registration</title>
-    <script src="form.js"></script>
 </head>
-<body onload="generateCaptcha()">
+<body>
     <div class="container">
         <h1>Registration Form</h1>
         <hr>
@@ -51,11 +50,11 @@
                 <br>
                 <span>
                     <label for="lblPrimaryNumber">Primary Number<span id="str">*</span></label>
-                    <input type="number" name="phone1" id="lblPrimaryNumber" placeholder="Primary Number"/>
+                    <input type="text" name="phone1" id="lblPrimaryNumber" placeholder="Primary Number"/>
                 </span>
                 <span>
                     <label for="lblAlternateNumber">Alternate Number</label>
-                    <input type="number" name="phone2" id="lblAlternateNumber" placeholder="Alternate Number"/>
+                    <input type="text" name="phone2" id="lblAlternateNumber" placeholder="Alternate Number"/>
                 </span>
                 <div class="error" id="errorContact"></div>
             </div>
@@ -74,10 +73,10 @@
             <div class="row">
                 <h4>Address</h4>
                 <label for="lblCurrentAddress">Current Address</label>
-                <input id="lblCurrentAddress" name="currentAddress" placeholder="Current Address" type="textarea"/>
+                <input id="lblCurrentAddress" name="currentAddress" placeholder="Complete Current Address" type="textarea"/>
                 <br>
                 <label for="lblPermanentAddress">Permanent Address<span id="str">*</span></label>
-                <input id="lblPermanentAddress" name="permanentAddress" placeholder="Permanent Address" type="textarea"/>
+                <input id="lblPermanentAddress" name="permanentAddress" placeholder="Street/Locality for Permanent Address" type="textarea"/>
                 <br>
                 <label for="lblCity">City<span id="str">*</span></label>
                 <input type="text" name="city" id="lblCity" placeholder="City"/>
@@ -143,10 +142,11 @@
                 <input type="number" name="inputCaptchaAnswer" id="lblInputCaptchaValue"/>
             </div>
             <div class="error" id="errorCaptcha"></div>
-            <input type="button"  onclick="formValidate()" value="Register" id="submit"/>
+            <input type="button"  onclick="formValidate(); generateCaptcha();" value="Register" id="submit"/>
         </form>
 
     </div>
 
 </body>
+<script src="form.js"></script>
 </html>

@@ -38,6 +38,9 @@ function formValidate() {
     var errorText = [];
     var txt = "";
 
+    var p1 = Number(phone1);
+    var p2 = Number(phone2);
+
     //function to print error comments in lists
 
     function printValue(value){
@@ -51,7 +54,7 @@ function formValidate() {
         errorText.push("Fill the First Name Field.");
     }
     else {
-        var regex = /^[a-zA-Z]+$/;
+        var regex = /^[a-zA-Z]+/;
         if (!regex.test(firstName)) {
             errorText.push("Avoid using space or digits or special character in first name.");
         }
@@ -77,7 +80,7 @@ function formValidate() {
         errorText.push("Fill the Last Name Field.");
     }
     else {
-        var regex = /^[a-zA-Z]+$/;
+        var regex = /^[a-zA-Z]+/;
         if (!regex.test(lastName)) {
             errorText.push("Avoid using space or digits or special character in last name.");
         }
@@ -116,7 +119,7 @@ function formValidate() {
         errorText.push("Email field cannot be blank.");
     }
     else {
-        var regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]+$/;
+        var regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]+/;
         if (regex.test(email)) {
             errEmail = false;
         }
@@ -124,22 +127,28 @@ function formValidate() {
             errorText.push("Email is not in correct format.");
         }
     }
-    if (phone1 === ""){
+   
+    if (phone1 === 0){
         errorText.push("Primary Contact needs to be filled.");
     }
     else {
-        if (phone1.length != 10){
+        if (phone1.length != 10 || p1 === NaN){
             errorText.push("Enter ten digit Contact Number in primary number.");
         }
         else {
             errPhone1 = false;
         }
     }
-    if (phone2.length == 0 || phone2.length == 10 ){
+    if (phone2.length == 0){
         errPhone2 = false;
     }
     else {
-        errorText.push("Enter ten digit Contact Number in primary number.");
+        if (phone2.length != 10 || p2 == NaN){
+            errorText.push("Enter ten digit Contact Number in alternate number.");
+        }
+        else {
+            errPhone2 = false;
+        }
     }
     txt = "<ul>";
     errorText.forEach(printValue);
@@ -298,7 +307,7 @@ function validateCaptcha(){
     if (captchaAns == inputAns) {
         return true;
     }
-    else {
-        generateCaptcha();
-    }
+    generateCaptcha();
 }
+
+generateCaptcha();
