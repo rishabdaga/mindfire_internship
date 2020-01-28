@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <hr>
+        <form name="registrationForm" id="registrationForm" >
+            <div class="row">
+                <h4>Full Name</h4>
+                <div class="col-3">
+                    <label for="lblFirstName">First Name<span class="str">*</span></label>
+                    <input type="text" name="firstName" id="lblFirstName" placeholder="First Name"/>
+                </div>
+                <div class="col-3">
+                    <label for="lblMiddleName">Middle Name</label>
+                    <input type="text" name="middleName" id="lblMiddleName" placeholder="Middle Name"/>
+                </div>
+                <div class="col-3">
+                    <label for="lblLastName">Last Name<span class="str">*</span></label>
+                    <input type="text" name="lastName" id="lblLastName" placeholder="Last Name"/>
+                </div>
+                <div class="error" id="errorFullName"></div>
+            </div>
+            <div class="row">
+                <h4>Basic Details</h4>
+                <div class="col-2">
+                    <label>Gender<span class="str">*</span></label><br>
+                    <input type="radio" name="gender" id="lblMale" value="male"/>
+                    <label for="lblMale">Male</label>
+                    <input type="radio" name="gender" id="lblFemale" value="female"/>
+                    <label for="lblFemale">Female</label>
+                    <input type="radio" name="gender" id="lblOther" value="other"/>
+                    <label for="lblOther">Other</label>
+                </div>
+                <div class="col-2">
+                    <label for="lblDOB">Date of Birth<span class="str">*</span></label><br>
+                    <input type="date" name="DOB" id="lblDOB"/>
+                </div>
+                <div class="error" id="errorBasicDetails"></div>
+            </div>
+            <div class="row">
+                <h4>Contact</h4>
+                <div class="col-4">
+                    <label for="lblEmail">Email<span class="str">*</span></label>
+                </div>
+                <div class="col-4">
+                    <input type="email" name="email" id="lblEmail" placeholder="abc@example.com" />
+                </div>
+                <div class="clear-row">
+                    <div class="col-4">
+                        <label for="lblPrimaryNumber">Primary Number<span class="str">*</span></label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" name="phone1" id="lblPrimaryNumber" placeholder="Primary Number"/>
+                    </div>
+                    <div class="col-4">
+                        <label for="lblAlternateNumber">Alternate Number</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" name="phone2" id="lblAlternateNumber" placeholder="Alternate Number"/>
+                    </div>
+                    <div class="error" id="errorContact"></div>
+                </div>
+            </div>
+            <div class="row">
+                <h4>Privacy</h4>
+                <div class="col-4">
+                    <label for="lblPassword">Password<span class="str">*</span></label>
+                </div>
+                <div class="col-4">
+                    <input type="password" name="password" id="lblPassword" placeholder="Password" />
+                </div>
+                <div class="col-4">
+                    <label for="lblConfirmPassword">Confirm Password<span class="str">*</span></label>
+                </div>
+                <div class="col-4">
+                    <input type="password" name="confirmPassword" id="lblConfirmPassword" placeholder="Confirm Password"/>
+                </div>
+                <div class="error" id="errorPrivacy"></div>
+            </div>
+            <div class="row">
+                <h4>Address</h4>
+                <div class="col-4">
+                    <label for="lblCurrentAddress">Current Address</label>
+                </div>
+                <div class="col-4">
+                    <input id="lblCurrentAddress" name="currentAddress" placeholder="Complete Current Address" type="textarea"/>
+                </div>
+                <br>
+                <div class="col-4">
+                    <label for="lblPermanentAddress">Permanent Address<span class="str">*</span></label>
+                </div>
+                <div class="col-4">
+                    <input id="lblPermanentAddress" name="permanentAddress" placeholder="Street/Locality" type="textarea"/>
+                </div>
+                <br>
+                <div class="col-3">
+                    <label for="lblCountry">Select Country<span class="str" >*</span></label>
+                    <select name="country" id="lblCountry">
+                        <option value="">---Select---</option>
+                        <option value="India">India</option>
+                        <option value="Other">other than India</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label for="lblState">Select State<span class="str">*</span></label>
+                    <select name="state" id="lblState">
+                        <option value="">---Select State---</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Orissa">Orissa</option>
+                        <option value="Pondicherry">Pondicherry</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttaranchal">Uttaranchal</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>  
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label for="lblCity">City<span class="str">*</span></label>
+                    <input type="text" name="city" id="lblCity" placeholder="City"/>
+                </div>    
+                <br>
+                <input type="checkbox" name="subscription" id="lblSubscription"/>
+                <label for="lblSubscription">Subscribe to Newsletter</label>
+                <div class="error" id="errorAddress"></div>
+            </div>
+            <br>
+            <input type="button" value="Proceed" id="proceed"/>
+            <div class="captcha">
+                <label for="lblInputCaptchaValue" id="questionCaptcha"></label><label id="captchaRefresh">Refresh</label>
+                <input type="hidden" id="captchaAnswer"/>
+                <br>
+                <label>Enter your answer below:</label>
+                <br>
+                <input type="text" name="inputCaptchaAnswer" id="lblInputCaptchaValue"/>
+            </div>
+            <div class="error" id="errorCaptcha"></div>
+            <input type="button" value="Register" id="submit"/>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="form.js"></script>
+</body>
+</html>
