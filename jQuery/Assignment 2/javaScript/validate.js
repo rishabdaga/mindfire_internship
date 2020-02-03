@@ -117,7 +117,8 @@ function firstnameValidation() {
 function middleNameValidation(){
     $("#txtMiddleName").next().html("");
     var middleName = $.trim($( "#txtMiddleName" ).val());
-    if (/^[a-zA-Z]+$/.test(middleName) || middleName === "") {
+    var regex = /^[a-zA-Z]+$/;
+    if (regex.test(middleName) || middleName === "") {
         errMiddleName = false;
     }
     else {
@@ -194,7 +195,6 @@ function phoneNumbervalidation(){
     var regex = /^[1-9][0-9]{9}$/;
     $(".contact-number").each(function(){
         var phoneNumber = $(this).val();
-        var regex = /^[1-9][0-9]{9}$/;
         if (phoneNumber === ""){
             $(this).parent().children("div").html("Contact Number cannot be blank.");
 
@@ -246,7 +246,7 @@ function addressValidation(){
             $(this).next().html("Pin Code cannot be blank.");
         }
         else {
-            if( $.trim($(this).val()).length != 6 || !(/^[1-9]+$/).test($.trim($(this).val()))){
+            if( $.trim($(this).val()).length != 6 || !regex.test($.trim($(this).val()))){
                 $(this).next().html("Enter a valid six-digit pin Code.");
             }
         }

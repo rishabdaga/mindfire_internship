@@ -2,27 +2,31 @@
 .resume{
     width: 80%;
     margin: auto;
-    padding-bottom: 100px;
-    height: 800px;
     margin-top: 50px;
     margin-bottom: 50px;
     font-size: 20px;
+    height: 1000px;
+    border: 3px solid black;
     
 }
 .image-column{
     margin: 0;
-    width: 29%;
+    width: 30%;
     display:block;
-    background-color: powderblue;
-    height: 800px;
+    background-color: rgb(92, 96, 97);
     float: left;
+    height: inherit;
 
+
+}
+img{
+    border: 1px solid black;
 }
 .field-column{
     margin: 0;
-    width: 69%;
+    width: 70%;
     display: inline-block;
-    height: 800px;
+   
     
     
 }
@@ -38,11 +42,8 @@
     padding: 20px;
 }
 .profile-keeper{
-    padding: 5px;
-    border: 1px solid black;
     margin-top: 75px;
-    width: 80%;
-    height: 250px;
+    width: fit-content;
     margin-left: 10%;
 }
 .col-2{
