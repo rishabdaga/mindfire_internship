@@ -1,0 +1,66 @@
+
+.resume{
+    width: 80%;
+    margin: auto;
+    padding-bottom: 100px;
+    height: 800px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    
+}
+.image-column{
+    margin: 0;
+    width: 29%;
+    display:block;
+    background-color: powderblue;
+    height: 800px;
+    float: left;
+
+}
+.field-column{
+    margin: 0;
+    width: 69%;
+    display: inline-block;
+    height: 800px;
+    
+    
+}
+.name-row{
+    width: 100%;
+    height: 250px;
+    background-color: rgba(0,0,0,0.1);
+    padding: 50px 20px;  
+}
+
+.detail-row{
+    width: 100%;
+    padding: 20px;
+}
+.profile-keeper{
+    padding: 5px;
+    border: 1px solid black;
+    margin-top: 75px;
+    width: 80%;
+    height: 250px;
+    margin-left: 10%;
+}
+.col-2{
+    width: 50%;
+    float: left;
+    margin: 0;
+}
+.row-detail{
+    padding: 20px 20px;
+    font-size: large;
+}
+.name-row > div{
+    display: inline-block;
+}
+#name{
+    font-size: 50px;
+    font-weight: bolder;
+}
+li{
+    font-size: 25px;
+}

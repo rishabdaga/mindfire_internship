@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/resume.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <nav>
+        <div>
+            Resume Builder
+        </div>
+    </nav>
+    <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>There are still error in your input, please rectify and proceed.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="page-header">
+            <h2>Fill up the form to Register yourself</h2>
+            <h4><span class="red-asterisk">*</span>marked fields are mandatory.</h4>
+            <hr>
+        </div>
+        <form>
+            <div class="row-fields">
+                <h4>Basic Details</h4>
+                <div class="row">
+                    <div class="col-3">
+                        <label for=txtFirstName>First Name<i class="red-asterisk">*</i></label>
+                        <input id="txtFirstName" type="text" name="firstName" maxlength="15" placeholder="e.g. Rishab"/>
+                        <div class="error"></div>
+                    </div>
+                    <div class="col-3">
+                        <label for=txtMiddleName>Middle Name</label>
+                        <input id="txtMiddleName" type="text" name="middleName" maxlength="15" placeholder="e.g. Kumar"/>
+                        <div class="error"></div>
+                    </div>
+                    <div class="col-3">
+                        <label for=txtLastName>Last Name<i class="red-asterisk">*</i></label>
+                        <input id="txtLastName" type="text" name="txtLastName" maxlength="15" placeholder="e.g. Daga"/>
+                        <div class="error"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <label>Gender<i class="red-asterisk">*</i></label>
+                        <div class="radio-buttons">
+                            <input type="radio" name="gender" id="radioMale" value="male"/>
+                            <label for="radioMale">Male</label>
+                            <input type="radio" name="gender" id="radioFemale" value="female"/>
+                            <label for="radioFemale">Female</label>
+                            <input type="radio" name="gender" id="radioOther" value="other"/>
+                            <label for="radioOther">Other</label>
+                        </div>
+                        <div class="error"></div>
+                    </div>
+                    <div class="col-3">
+                        <label for="dateDOB">Date of Birth<i class="red-asterisk">*</i></label>
+                        <input type="date" name="DOB" id="dateDOB"/>
+                        <div class="error"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fields contact-field">
+                <h4>Contact</h4>
+                <div class="row">
+                    <div class="col-3">
+                        <label for="txtEmail">Email<i class="red-asterisk">*</i></label>
+                        <input id="txtEmail" type="text" name="email" placeholder="e.g. example@gmail.com" />
+                        <div class="error"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <label for="txtPhoneNumber">Phone Number<i class="red-asterisk">*</i></label>
+                        <input class="contact-number" id="txtPhoneNumber" name="phone[]" type="text" maxlength="10" placeholder="e.g. XXXXXXXXXXX" />
+                        <i class="fa fa-plus-square" title="Click to add another Phone Number."></i>
+                        <div class="error"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fields address-field">
+                <h4>Address Details</h4>
+                <fieldset> 
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="txtAreaAddress">Street/Locality</label><i class="red-asterisk">*</i>
+                            <textarea class="address-street" id="txtAreaAddress" placeholder="e.g. 10th Downing Street"></textarea>
+                            <div class="error"></div>
+                        </div>
+                        <div class="col-3">
+                            <label for="selectCountry">Country</label><i class="red-asterisk">*</i>
+                            <select class="address-country" id="selectCountry">
+                                <option value="">----Select Country----</option>
+                                <option value="India">India</option>
+                                <option value="USA">USA</option>
+                            </select>
+                            <div class="error"></div>
+                        </div>
+                        <div class="col-3">
+                            <label for="selectState">State</label><i class="red-asterisk">*</i>
+                            <select class="address-state" id="selectState">
+                                <option value="">Please Select Country First</option>
+                            </select>
+                            <div class="error"></div>
+                        </div>
+                    </div> 
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="txtCity">City</label><i class="red-asterisk">*</i>
+                            <input class="address-city" id="txtCity" type="text" placeholder="e.g. Bhubaneswar">
+                            <div class="error"></div>
+                        </div>
+                        <div class="col-3">
+                            <label for="txtPinCode">Pin/Zip Code<i class="red-asterisk">*</i></label>
+                            <input class="address-pin-code" id="txtPinCode" type="text" maxlength="6" placeholder="e.g. 751024"/>
+                            <div class="error"></div>
+                        </div>
+                    </div>         
+                </fieldset>
+                <legend class="add-more-field">Add More<i class="fa fa-plus-square"></i></legend> 
+            </div>
+            <div class="row-fields">
+                <h4>Document Details</h4>
+                <div class="row">
+                    <div class="col-3">
+                        <label for="txtAadhaarCard">Aadhaar Card Number</label><i class="red-asterisk">*</i>
+                        <input id="txtAadhaarCard" type="text" name="aadhaarNumber" maxlength="12" placeholder="e.g. 123456789191" />
+                        <div class="error"></div>
+                    </div>
+                    <div class="col-3">
+                        <label for="txtPanNumber">PAN Card Number</label><i class="red-asterisk">*</i>
+                        <input id="txtPanNumber" type="text" maxlength="10" name="panNumber" placeholder="e.g. ABCDE1234F"/>
+                        <div class="error"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <div class="image-upload-wrap">
+                            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                            <div class="drag-text">
+                                <h3>Click to browse or drag an image here</h3>
+                            </div>
+                        </div>
+                        <div class="file-upload-content">
+                            <img class="file-upload-image" src="#" alt="your image" />
+                            <div class="image-title-wrap">
+                                <button type="button" onclick="removeUpload()" class="remove-image">Remove</button>
+                            </div>
+                        </div>
+                        <div class="error"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="captcha col-3">
+                        <div id="questionCaptcha"></div>
+                        <button type="button" class="refreshCaptcha"><i class="fas fa-sync-alt"></i> Refresh</button>
+                        <input type="hidden" id="captchaAnswer"/>
+                        <br>
+                        <label for="txtInputCaptchaValue">Enter your answer below:</label>
+                        <input type="text" name="inputCaptchaAnswer" id="txtInputCaptchaValue"/>
+                        <div class="error"></div>
+                    </div>
+                </div>   
+            </div>
+            <button type="reset" value="Reset">Reset</button>
+            <button type="submit" value="Submit">Register</button>
+        </form>
+    </div>
+    <div class="resume" hidden>
+        <div class="image-column">
+            <div class="profile-keeper">
+                <div class="file-upload-content">
+                    <img class="file-upload-image" src="#" alt="your image" />
+                </div>
+            </div>
+        </div>
+        <div class="field-column">
+            <div class="name-row">
+                <div id="name"></div>
+                <br>
+                <label>Email:</label><div id="email"></div>
+                <br>
+                <label>Phone:</label><div id="phone"></div>
+            </div>
+            <div class="detail-row">
+                <h3>Personal Details</h3>
+                <hr>
+                <div class="row-detail">
+                    <div class="col-2"><label>Date of Birth(yyyy/mm/dd)</label></div>
+                    <div class="col-2"><div id="dob"></div></div>
+                </div>
+                <div class="row-detail">
+                    <div class="col-2"><label>Gender</label></div>
+                    <div class="col-2"><div id="gender"></div> </div>
+                </div>
+                <div class="row-detail">
+                    <div class="col-2"><label>PAN Number</label></div>
+                    <div class="col-2"><div id="panNumber"></div></div>
+                </div>
+                <div class="row-detail">
+                    <div class="col-2"><label>Aadhaar Number</label></div>
+                    <div class="col-2"><div id="aadhaarNumber"></div></div>
+                </div>  
+                <br>
+                <h3>Address</h3>
+                <hr>
+                <div id="address"></div>
+            </div>
+        </div>
+    </div>
+    <script src="../javaScript/dynamicFields.js"></script>
+    <script src="../javaScript/validate.js"></script>
+    <script src="../javaScript/drag.js"></script>
+</body>
+</html>
+
+
