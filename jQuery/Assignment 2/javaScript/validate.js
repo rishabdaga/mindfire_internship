@@ -4,6 +4,14 @@ $(function(){
         generateCaptcha();
         $(".resume").hide();
 
+        $(".file-upload-input").change(function(){
+            readURL(this);
+        });
+
+        $(".remove-image").click(function(){
+            removeUpload();
+        });
+
         $(".refreshCaptcha").click(function(){
             generateCaptcha();
         });
@@ -18,6 +26,10 @@ $(function(){
 
         $(".close").click(function() {
             $(".modal").hide();
+        });
+
+        $(".file-upload-input").change(function(){
+            readURL(this);
         });
 
         //blur events .....
