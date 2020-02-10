@@ -30,15 +30,15 @@ $(".contact-field").on("click", ".fa-minus-square", function(){
     $(this).parent("div").remove();
 })
 
-$(".address-field").on("click", ".add-more-field", function(){
-    $(".address-field").append(`
-    <div>
+$(".address-container").on("click", ".add-more-field", function(){
+    $(".address-container").append(`
+    <div class="address-field">
     <legend class='delete-field'>Remove<i class="fa fa-minus-square"></i></legend> 
     <fieldset>
         <div class="row">
             <div class="col-3">
                 <label>Street/Locality</label><i class="red-asterisk">*</i>
-                <textarea class="address-street" placeholder="e.g. 10th downing street."></textarea>
+                <textarea class="address-street" placeholder="e.g. 10th downing street." maxlength="25"></textarea>
                 <div class="error"></div>
             </div>
             <div class="col-3">
@@ -47,10 +47,6 @@ $(".address-field").on("click", ".add-more-field", function(){
                     <option value="">----Select Country----</option>
                     <option value="India">India</option>
                     <option value="USA">USA</option>
-                    <option value="Canada">Canada</option>
-                    <option value="France">France</option>
-                    <option value="Russia">Russia</option>
-                    <option value="China">China</option>
                 </select>
                 <div class="error"></div>
             </div>
@@ -65,7 +61,7 @@ $(".address-field").on("click", ".add-more-field", function(){
         <div class="row">
             <div class="col-3">
                 <label>City</label><i class="red-asterisk">*</i>
-                <input class="address-city" type="text" placeholder="e.g. Bhubaneswar">
+                <input class="address-city" type="text" placeholder="e.g. Bhubaneswar" minlength="3" maxlength="25">
                 <div class="error"></div>
             </div>
             <div class="col-3">
@@ -75,37 +71,14 @@ $(".address-field").on("click", ".add-more-field", function(){
             </div>
         </div>         
     </fieldset>
-    </div>`).on("change", ".address-country", function countryWiseState(){
-        txt="";
-        var country = $(this).val();
-        switch ( country ){
-            case "India":
-                txt += stateList(indiaStates);
-                break;
-            case "USA":
-                txt += stateList(usStates);
-                break;
-            default:
-                txt="<option val=''>Please Select Country First</option>";
-        }
-        $(this).parent().next().children(".address-state").html(txt);
-    });
-})
+    </div>`);
+});
 
-$(".address-field").on("click", ".delete-field", function(){
+$(".address-container").on("click", ".delete-field", function(){
     $(this).parent().remove();
 })
 
-
-function stateList(arr) {
-    var txt="<option val=''>----Select State----</option>";
-    arr.forEach(function(value){
-        txt += "<option value='" + value + "'>" + value + "</option>";
-    });
-    return txt;
-}
-
-$(".address-country").change(function(){
+$(".address-container").on("change", ".address-country", function(){
     txt="";
     var country = $(this).val();
     switch ( country ){
@@ -120,6 +93,14 @@ $(".address-country").change(function(){
     }
     $(this).parent().next().children(".address-state").html(txt);
 })
+
+function stateList(arr) {
+    var txt="<option value=''>----Select State----</option>";
+    arr.forEach(function(value){
+        txt += "<option value='" + value + "'>" + value + "</option>";
+    });
+    return txt;
+}
 
 //captcha scripts............................................
 
@@ -175,11 +156,7 @@ function validateCaptcha(){
     if (captchaAns === inputAns) {
         return true;
     }
-    generateCaptcha();
 }
 
-$(".refreshCaptcha").click(function(){
-    generateCaptcha();
 
-})
 

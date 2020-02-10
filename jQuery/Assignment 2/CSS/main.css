@@ -115,7 +115,7 @@ legend{
 #questionCaptcha{
     width: 50%;
     text-align: center;
-    background-image: url("../images/captcha_bck.jpg");
+    background-image: url("../images/captchaBack.jpg");
     padding: 10px 0;
     font-weight: bolder;
     display: inline-block;
