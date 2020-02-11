@@ -22,6 +22,7 @@ $(function(){
 
         $("button[type='reset']").click(function(){
             $(".error").text("");
+            removeUpload();
         });
 
         $(".close").click(function() {
@@ -152,6 +153,7 @@ $(function(){
                              "-" + addressPinCode.val() + ", " + addressCountry.val() + ".";
             addressAll += "<li>" + addressSet + "</li>";
         });
+        addressAll += "</ul>";
         validateField(aadhaarNumber, true, /^[1-9][0-9]+$/, "Aadhaar Number is not in correct format.", aadhaarNumber.next());
         validateField(panNumber, true, /^[a-zA-Z]{5}[0-9]{4}[a-zA-Z]$/, "PAN Number is not valid.", panNumber.next());
         validateField(imageURL, true, /\.(jpg|jpeg|png)$/, "Only .jpg, .jpeg, .png files",$(".file-upload-content").next());
@@ -189,10 +191,11 @@ $(function(){
             dob.next().html("Date of Birth need dd/mm/yyyy.");
         }
         else {
+            const MILLI_SEC_PER_1000_YEAR = 365*1000*60*60*24;
             var d = new Date();
-            var age = ((Date.parse(d)-Date.parse(date))) / (365*1000*60*60*24);
+            var age = ((Date.parse(d)-Date.parse(date))) / MILLI_SEC_PER_1000_YEAR;
             console.log(age);
-            if(age > 10.000 || age== 10.000)
+            if(age >= 10.000)
             {
                 validator.pop();
             }
