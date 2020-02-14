@@ -1,0 +1,5 @@
+C:\Users\mindfire\Desktop\Assignment\TaxCalculator\TaxCalculator.Infra\obj\Debug\TaxCalculator.Infra.csprojResolveAssemblyReference.cache
+C:\Users\mindfire\Desktop\Assignment\TaxCalculator\TaxCalculator.Infra\bin\Debug\TaxCalculator.Infra.dll
+C:\Users\mindfire\Desktop\Assignment\TaxCalculator\TaxCalculator.Infra\bin\Debug\TaxCalculator.Infra.pdb
+C:\Users\mindfire\Desktop\Assignment\TaxCalculator\TaxCalculator.Infra\obj\Debug\TaxCalculator.Infra.dll
+C:\Users\mindfire\Desktop\Assignment\TaxCalculator\TaxCalculator.Infra\obj\Debug\TaxCalculator.Infra.pdb
