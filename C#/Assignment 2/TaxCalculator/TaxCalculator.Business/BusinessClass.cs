@@ -11,14 +11,20 @@ namespace TaxCalculator.Business
 {
     public class TaxCalculations : Infrastucture
     {
-        public long Validation(string a)
+
+        // to take input until valid input is provided
+
+        public ulong Validation(string a)
         {
             while (!IsValidNumber(a))
             {
                 a = Console.ReadLine();
             }
-            return UInt32.Parse(a);
+            return UInt64.Parse(a);
         }
+
+        // to check a number is valid and return boolean value
+
         public bool IsValidNumber(string a)
         {
             try
@@ -34,38 +40,64 @@ namespace TaxCalculator.Business
             }
 
         }
-        public void TaxSlabCalculation(long income, long exemption)
+
+        // return the list of slab tax amount
+
+        public List<double> TaxSlabCalculation(ulong income, ulong exemption)
         {
-            
-                int i;
-                double netTaxAmount = 0;
-                double slabTaxAmount = 0;
-                int[] slab = { 0, 250000, 500000, 1000000 };
-                double[] slabRate = { 0, 0.05, 0.2, 0.3 };
-                long taxableAmount = (exemption >= 150000) ? income - 150000 : income - exemption;
-                Console.WriteLine("------------------------------------------------------------");
-                Console.WriteLine("INCOME: {0}", income);
-                Console.WriteLine("EXEMPTION: {0}", exemption);
-                Console.WriteLine("TAXABLE AMOUNT:\t{0}\n", taxableAmount);
-                Console.WriteLine("SLABS\t\t\t\tTAX AMOUNT\n");
-                for (i = 0; i < slab.Length - 1 && taxableAmount > 0; i++)
-                {
-                    slabTaxAmount = slabRate[i] * (slab[i + 1] - slab[i]);
-                    netTaxAmount += slabTaxAmount;
-                    Console.WriteLine("Rs.{0} to Rs.{1}\t\tRs.{2}", slab[i], slab[i + 1], slabTaxAmount);
-                    taxableAmount -= (slab[i + 1] - slab[i]);
-                }
-                if (taxableAmount > 0)
-                {
-                    slabTaxAmount = slabRate[i] * taxableAmount;
-                    netTaxAmount += slabTaxAmount;
-                    Console.WriteLine("Rs.{0} and Above\t\tRs.{1}", slab[i], slabTaxAmount);
-                }
-                string formattedPrice = netTaxAmount.ToString("0,0", CultureInfo.CreateSpecificCulture("hi-IN"));
-                Console.Write("\nTotal Tax Amount: Rs.");
-                Console.WriteLine(formattedPrice);
-                Console.WriteLine("------------------------------------------------------------");
-            
+            int i;
+            List<double> slabTaxAmount = new List<double>();
+            int[] slab = { 0, 250000, 500000, 1000000 };
+            double[] slabRate = { 0, 0.05, 0.2, 0.3 };
+            double taxableAmount = (exemption >= 150000) ? income - 150000 : income - exemption;
+            double amountDeduct;
+            Console.WriteLine("------------------------------------------------------------");
+            Console.WriteLine("INCOME: {0}", income);
+            Console.WriteLine("EXEMPTION: {0}", exemption);
+            Console.WriteLine("TAXABLE AMOUNT AFTER EXEMPTION:\t{0}\n", taxableAmount);
+
+
+            for (i = 0; i < slab.Length - 1 && taxableAmount > 0; i++)
+            {
+                amountDeduct = (taxableAmount <= slab[i]) ? taxableAmount : (slab[i + 1] - slab[i]);
+                slabTaxAmount.Add(slabRate[i] * amountDeduct);
+                taxableAmount -= amountDeduct;
+            }
+            if (taxableAmount > 0)
+            {
+                slabTaxAmount.Add(slabRate[i] * taxableAmount);
+            }
+            return slabTaxAmount;             
+        }
+
+        //formatting value in india format.
+
+        public string FormattingIndian(double a)
+        {
+            return a.ToString("0,0", CultureInfo.CreateSpecificCulture("hi-IN"));
+        }
+
+        //displaying the tax
+
+        public void Display(List<double> slabTaxAmount)
+        {
+            double netTaxAmount = 0;
+            int j = 0;
+            Console.WriteLine("SLABS                      \t\tTAX AMOUNT\n");
+            string[] slab = { "Rs.0 To Rs.2,50,000        ", 
+                              "Rs.2,50,000 To Rs.5,00,000 ", 
+                              "Rs.5,00,000 To Rs.10,00,000", 
+                              "Above Rs.10,00,000         " };
+              
+            foreach (double i in slabTaxAmount)
+            {
+                Console.WriteLine("{0}\t\tRs.{1}", slab[j], FormattingIndian(i));
+                netTaxAmount += i;
+                j++;
+            }
+            Console.Write("\nTotal Tax Amount:          \t\tRs.");
+            Console.WriteLine(FormattingIndian(netTaxAmount));
+            Console.WriteLine("------------------------------------------------------------");
         }
     }
 }

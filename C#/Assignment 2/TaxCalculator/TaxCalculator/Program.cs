@@ -12,7 +12,8 @@ namespace TaxCalculator
         static void Main(string[] args)
         {
             TaxCalculations Calc = new TaxCalculations();
-            long income, exemption;
+            ulong income, exemption;
+            List<double> resultSet;
             Console.WriteLine("---------------------TAX CALCULATOR---------------------");
    restart: Console.WriteLine("ENTER YOUR TOTAL INCOME:");
             income = Calc.Validation(Console.ReadLine());
@@ -21,9 +22,15 @@ namespace TaxCalculator
             if (exemption > income)
             {
                 Console.WriteLine("EXEMPTION CANNOT BE GREATER THAN INCOME.");
-                goto restart;
+                
+                //goto restart, to retake the input.
+
+                goto restart;  
+
+
             }
-            Calc.TaxSlabCalculation(income, exemption);
+            resultSet = Calc.TaxSlabCalculation(income, exemption);
+            Calc.Display(resultSet);
             Console.WriteLine("\nENTER ANY KEY TO EXIT");
             Console.ReadKey();
         } 
